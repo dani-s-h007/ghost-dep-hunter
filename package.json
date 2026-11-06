@@ -1,0 +1,47 @@
+{
+  "name": "ghost-dep-hunter",
+  "version": "1.0.0",
+  "description": "Zombie unused dependency & undeclared phantom import auditor for modern JavaScript/TypeScript projects.",
+  "type": "module",
+  "main": "src/auditor.js",
+  "types": "index.d.ts",
+  "bin": {
+    "ghost-dep-hunter": "bin/cli.js"
+  },
+  "files": [
+    "src",
+    "bin",
+    "demo",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "demo": "node demo/run-demo.js",
+    "start": "node bin/cli.js"
+  },
+  "keywords": [
+    "dependencies",
+    "package-json",
+    "phantom-deps",
+    "unused-dependencies",
+    "depcheck",
+    "node_modules",
+    "linter",
+    "cli"
+  ],
+  "author": "dani-s-h007 <shanusathar@gmail.com>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dani-s-h007/ghost-dep-hunter.git"
+  },
+  "homepage": "https://github.com/dani-s-h007/ghost-dep-hunter#readme",
+  "bugs": {
+    "url": "https://github.com/dani-s-h007/ghost-dep-hunter/issues"
+  }
+}
