@@ -50,33 +50,33 @@ export async function runCli(argv = process.argv.slice(2)) {
     return 0;
   }
 
-  console.log('\n👻 ghost-dep-hunter - Dependency & Import Auditor');
+  console.log('\nghost-dep-hunter - Dependency & Import Auditor');
   console.log('============================================================');
   console.log(`Audited Directory:   ${rootDir}`);
   console.log(`Declared Packages:   ${report.totalDeclaredDeps}`);
   console.log(`Code Import Modules: ${report.totalImportsFound}\n`);
 
   if (!report.hasIssues) {
-    console.log('✅ Clean! No phantom imports or zombie dependencies found.');
+    console.log('[OK] Clean! No phantom imports or zombie dependencies found.');
     console.log('============================================================\n');
     return 0;
   }
 
   if (report.phantomImports.length > 0) {
-    console.log(`🚨 PHANTOM IMPORTS (Imported in code, but missing from package.json) [${report.phantomImports.length}]:`);
+    console.log(`[PHANTOM IMPORTS] (Imported in code, but missing from package.json) [${report.phantomImports.length}]:`);
     for (const item of report.phantomImports) {
       const loc = item.occurrences[0] ? ` (${item.occurrences[0].file}:${item.occurrences[0].line})` : '';
       console.log(`   - "${item.package}"${loc}`);
     }
-    console.log('   👉 Fix: Run `npm install <package>` to prevent production runtime crash!\n');
+    console.log('   -> Fix: Run `npm install <package>` to prevent production runtime crash!\n');
   }
 
   if (report.zombieDependencies.length > 0) {
-    console.log(`🧟 ZOMBIE DEPENDENCIES (Listed in package.json, but never imported) [${report.zombieDependencies.length}]:`);
+    console.log(`[ZOMBIE DEPENDENCIES] (Listed in package.json, but never imported) [${report.zombieDependencies.length}]:`);
     for (const dep of report.zombieDependencies) {
       console.log(`   - "${dep}"`);
     }
-    console.log('   👉 Fix: Run `npm uninstall <package>` to prune node_modules bloat.\n');
+    console.log('   -> Fix: Run `npm uninstall <package>` to prune node_modules bloat.\n');
   }
 
   console.log('============================================================\n');

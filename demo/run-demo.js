@@ -5,7 +5,7 @@
 
 import { extractImportsFromCode } from '../src/import-crawler.js';
 
-console.log('\n🚀 Starting ghost-dep-hunter Interactive Demo...\n');
+console.log('\n=== [DEMO] Starting ghost-dep-hunter ===\n');
 
 const mockSourceCode = `
 import express from 'express';
@@ -50,11 +50,11 @@ for (const dep of declared) {
 
 console.log(`Declared Dependencies in package.json: ${Array.from(declared).join(', ')}\n`);
 
-console.log(`🚨 PHANTOM IMPORTS (Used in code, but missing from package.json!):`);
+console.log(`[PHANTOM IMPORTS] (Used in code, but missing from package.json!):`);
 phantoms.forEach((p) => console.log(`   - "${p}" (will crash in clean Docker / CI build)`));
 
-console.log(`\n🧟 ZOMBIE DEPENDENCIES (Declared in package.json, but never imported!):`);
+console.log(`\n[ZOMBIE DEPENDENCIES] (Declared in package.json, but never imported!):`);
 zombies.forEach((z) => console.log(`   - "${z}" (wasting node_modules disk space)`));
 
-console.log('\n🎉 Demo completed successfully!\n');
+console.log('\n[SUCCESS] Demo completed successfully.\n');
 

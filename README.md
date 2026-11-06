@@ -1,4 +1,4 @@
-# ghost-dep-hunter 👻
+# ghost-dep-hunter
 
 [![CI](https://github.com/dani-s-h007/ghost-dep-hunter/actions/workflows/ci.yml/badge.svg)](https://github.com/dani-s-h007/ghost-dep-hunter/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
@@ -15,7 +15,7 @@ Two common package management hazards silently degrade software projects:
 
 ---
 
-## ✨ Features
+## Features
 
 - **Catches Undeclared Phantom Imports**: Prevents broken production builds caused by accidental transitive hoisting.
 - **Identifies Zombie Unused Dependencies**: Safely highlights packages that can be uninstalled to shrink `node_modules`.
@@ -25,7 +25,7 @@ Two common package management hazards silently degrade software projects:
 
 ---
 
-## 🚀 Installation & Demo
+## Installation & Demo
 
 ```bash
 # Run on-demand with npx
@@ -37,7 +37,7 @@ npm run demo
 
 ---
 
-## 🛠️ CLI Usage
+## CLI Usage
 
 ```bash
 # Audit dependencies in current directory:
@@ -52,7 +52,7 @@ ghost-dep-hunter --json
 
 ---
 
-## 💻 Programmatic TypeScript API
+## Programmatic TypeScript API
 
 ```typescript
 import { auditDependencies } from 'ghost-dep-hunter';
@@ -66,7 +66,7 @@ if (report.hasIssues) {
 
 ---
 
-## 🧪 Testing
+## Testing
 
 ```bash
 npm test
@@ -74,7 +74,7 @@ npm test
 
 ---
 
-## 📄 License
+## License
 
 MIT © Essentials Toolkit Authors
 
